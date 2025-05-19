@@ -1,0 +1,30 @@
+-- Busca todas las tablas que tengan fecha en la BD
+
+SELECT 
+    OWNER,
+    TABLE_NAME,
+    COLUMN_NAME,
+    DATA_TYPE
+FROM 
+    ALL_TAB_COLUMNS
+WHERE 
+    TABLE_NAME IN (
+        'XXFNA_PICKING_LINES',
+        'XXFNA_PICKING_HEADER',
+        'XXFNA_PICKING_ASSIGN',
+        'XXFNA_REG_BULTOS',
+        'OE_ORDER_LINES_ALL',
+        'WSH_DELIVERY_DETAILS',
+        'RA_CUSTOMER_TRX_LINES_ALL',
+        'RA_CUSTOMER_TRX_ALL',
+        'HZ_PARTIES',
+        'HZ_CUST_ACCOUNTS',
+        'HZ_CUSTOMER_PROFILES',
+        'HZ_CUST_PROFILE_CLASSES',
+        'XXFNA_ROUTE_DOCS',
+        'XXFNA_ROUTE_DOCS_LINES',
+        'CST_QUANTITY_LAYERS'
+    )
+    AND DATA_TYPE IN ('DATE', 'TIMESTAMP')
+ORDER BY 
+    TABLE_NAME, COLUMN_NAME;
