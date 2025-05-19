@@ -1,4 +1,4 @@
--- Busca soloen BOLINF
+-- Busca solo en BOLINF
 
 SELECT 
     OWNER,
